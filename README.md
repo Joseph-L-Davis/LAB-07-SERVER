@@ -49,5 +49,3 @@ Change all the files in the `data` directory to match the data model of your app
 - `/__tests__/app.test.js` contains testing file for routes. It has before code to run your db setup and after code to close the db connection
 - Use `npm run test:watch` to start tests in watch mode
 - Routes go in `app.js` (not `server.js`)
-
-postgres://hsyjxwbqgfpydj:78a6798e91ec4432e6d9fd839a7c05bb8d8576cc7174a4a65aa1a7280a341420@ec2-54-196-33-23.compute-1.amazonaws.com:5432/d8h44a05c75ocr
