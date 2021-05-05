@@ -81,6 +81,18 @@ describe('API Routes', () => {
 
   });
 
+  it('GET multiple sauces from sauces', async () => {
+    const sauce1 = await request.post('/api/sauces').send(apocalypse);
+    apocalypse = sauce1.body;
+    const sauce2 = await request.post('/api/sauces').send(yellowBird);
+    yellowBird = sauce2.body;
+
+    const response = await request.get('/api/sauces');
+
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual(expect.arrayContaining([aardvark, apocalypse, yellowBird]));
+  });
+
   // If a GET request is made to /api/sauces, does:
   // 1) the server respond with status of 200
   // 2) the body match the expected API data?
