@@ -101,6 +101,12 @@ describe('API Routes', () => {
     
   });
 
+  it('GET apocalypse from sauces', async () => {
+    const response = await request.get(`/api/sauces/${apocalypse.id}`);
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual(apocalypse);
+  });
+
   // If a GET request is made to /api/sauces, does:
   // 1) the server respond with status of 200
   // 2) the body match the expected API data?
