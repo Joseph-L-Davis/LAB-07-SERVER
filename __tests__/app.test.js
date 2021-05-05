@@ -106,30 +106,29 @@ describe('API Routes', () => {
     expect(response.status).toBe(200);
     expect(response.body).toEqual(apocalypse);
   });
+});
 
-  // If a GET request is made to /api/sauces, does:
-  // 1) the server respond with status of 200
-  // 2) the body match the expected API data?
-  // it.skip('GET /api/sauces', async () => {
-  //   // act - make the request
-  //   const response = await request.get('/api/sauces');
+// If a GET request is made to /api/sauces, does:
+// 1) the server respond with status of 200
+// 2) the body match the expected API data?
+// it.skip('GET /api/sauces', async () => {
+//   // act - make the request
+//   const response = await request.get('/api/sauces');
 
-  //   // was response OK (200)?
-  //   expect(response.status).toBe(200);
+//   // was response OK (200)?
+//   expect(response.status).toBe(200);
 
-  //   // did it return the data we expected?
-  //   expect(response.body).toEqual(expectedSauces);
+//   // did it return the data we expected?
+//   expect(response.body).toEqual(expectedSauces);
 
-  // });
+// });
 
-  // If a GET request is made to /api/sauces/:id, does:
-  // 1) the server respond with status of 200
-  // 2) the body match the expected API data for the cat with that id?
+// If a GET request is made to /api/sauces/:id, does:
+// 1) the server respond with status of 200
+// 2) the body match the expected API data for the cat with that id?
 //   it.skip('GET /api/sauces/:id', async () => {
 //     const response = await request.get('/api/sauces/2');
 //     expect(response.status).toBe(200);
 //     expect(response.body).toEqual(expectedSauces[1]);
 //   });
 // });
-
-// new comment to push
