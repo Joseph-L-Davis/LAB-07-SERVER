@@ -64,6 +64,23 @@ describe('API Routes', () => {
 
   });
 
+  it('PUT updated aardvark to sauces', async () => {
+
+    aardvark.location = 'Not Oregon';
+    aardvark.scoville = '1';
+    // act - make the request
+    const response = await request
+      .put(`/api/sauces/${aardvark.id}`)
+      .send(aardvark);
+
+    // was response OK (200)?
+    expect(response.status).toBe(200);
+
+    // did it return the data we expected?
+    expect(response.body).toEqual(aardvark);
+
+  });
+
   // If a GET request is made to /api/sauces, does:
   // 1) the server respond with status of 200
   // 2) the body match the expected API data?
