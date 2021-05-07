@@ -9,13 +9,21 @@ async function run() {
   try {
 
     // run a query to create tables
-    await client.query(`          
+    await client.query(`
+    CREATE TABLE users (
+      id SERIAL PRIMARY KEY NOT NULL,
+      name VARCHAR(512) NOT NULL,
+      email VARCHAR(512) NOT NULL,
+      password_hash VARCHAR(128) NOT NULL
+    );
+      
       CREATE TABLE sauces (
         id SERIAL PRIMARY KEY NOT NULL,
         name VARCHAR(512) NOT NULL,
         location VARCHAR(512) NOT NULL,
         scoville VARCHAR(1024) NOT NULL,
-        img VARCHAR(1024) NOT NULL
+        img VARCHAR(1024) NOT NULL,
+        user_id INTEGER NOT NULL REFERENCES users(id)
       );
     `);
 
