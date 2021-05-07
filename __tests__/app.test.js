@@ -146,7 +146,15 @@ describe('API Routes', () => {
       expect(response.status).toBe(200);
 
       // did it return the data we expected?
-      expect(response.body).toEqual(expectedSauces);
+      expect(response.body).toEqual({
+        id: expect.any(Number),
+        name: expect.any(String),
+        location: expect.any(String),
+        scoville: expect.any(String),
+        img: expect.any(String),
+        userId: expect.any(Number),
+        userName: expect.any(String),
+      });
 
 
     });
@@ -154,10 +162,18 @@ describe('API Routes', () => {
     // If a GET request is made to /api/sauces/:id, does:
     // 1) the server respond with status of 200
     // 2) the body match the expected API data for the cat with that id?
-    it.skip('GET /api/sauces/:id', async () => {
+    it('GET /api/sauces/:id', async () => {
       const response = await request.get('/api/sauces/2');
       expect(response.status).toBe(200);
-      expect(response.body).toEqual(expectedSauces[1]);
+      expect(response.body).toEqual({
+        id: expect.any(Number),
+        name: expect.any(String),
+        location: expect.any(String),
+        scoville: expect.any(String),
+        img: expect.any(String),
+        userId: expect.any(Number),
+        userName: expect.any(String),
+      });
     });
   });
 });
